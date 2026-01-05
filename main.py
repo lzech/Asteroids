@@ -30,7 +30,7 @@ def main():
     AsteroidField.containers = updatable
     asteroidfield = AsteroidField()
 
-    Shot.containers = (drawable, updatable)
+    Shot.containers = (shots,drawable, updatable)
 
 
 
