@@ -1,5 +1,6 @@
 import pygame, sys
 
+from shot import Shot
 from asteroid import Asteroid
 from player import Player
 from constants import SCREEN_HEIGHT, SCREEN_WIDTH
@@ -19,6 +20,7 @@ def main():
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
+    shots = pygame.sprite.Group()
     # Player is the name of the class, not an instance of it
     # This must be done before any Player objects are created
     Player.containers = (updatable, drawable)
@@ -27,6 +29,9 @@ def main():
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = updatable
     asteroidfield = AsteroidField()
+
+    Shot.containers = (drawable, updatable)
+
 
 
     # GameLoop
